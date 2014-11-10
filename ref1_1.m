@@ -1,6 +1,5 @@
 function ref1 = ref1_1()
 
-
 	% Trasarea caractristicii la scara semilogaritmica
 	% Formula de calcul:
 	% gamma = uT * 1/2.3 * delta_uD / delta_lg(iD)
@@ -30,25 +29,26 @@ function ref1 = ref1_1()
 	semilogx(uD_DZ3V3,iD,'c','LineWidth',2)
 	semilogx(uD_LEDR,iD,'r','LineWidth',2)
 	semilogx(uD_LEDG,iD,'g','LineWidth',2)
-	semilogx(uD_LEDB,iD,'b','LineWidth',2)
+	semilogy(uD_LEDB,iD,'b','LineWidth',2)
 	legend ("uD_1N4148","uD_1N4007","uD_BAT42","uD_1N5819","uD_DZ3V3","uD_LEDR","uD_LEDG","uD_LEDB");
 	hold off
 
-	delta_lgiD = log(iD(7)) - log(iD(1));
+	delta_lgiD = log(iD(7)*10^-3) - log(iD(1)*10^-3)
 	delta_uD = zeros(8,1);
 	for i = 1:8
 		delta_uD(i) = uD(i,7) - uD(i,1);
 	end
-	
+
 	for i = 1:8
-		gamma(i) = 25 * 1/2.3 * delta_uD(i) / delta_lgiD;
+		gamma(i) = 1/25 * 1/2.3 * delta_uD(i) / delta_lgiD; % * 10 ^ 6
 	end
 
 	gamma
 
 	for i = 1:8
-		I0(i) = log(iD(1)) - (delta_uD(i) / delta_lgiD) * uD(i,1);
+		I0(i) = log(iD(1)) - (delta_lgiD / delta_uD(i)) * uD(i,1);
 		% y   =    y0	   -              m             *    x0
+		% folosind ecuatia dreptei det. de panta si punctul (iD(1),uD(i,1))
 	end
 	I0
 
