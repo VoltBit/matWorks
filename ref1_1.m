@@ -5,7 +5,8 @@ function ref1 = ref1_1()
 	% Formula de calcul:
 	% gamma = uT * 1/2.3 * delta_uD / delta_lg(iD)
 	% uT = (const) 25mV
-	% I0 = ?
+	% y - y0 = m(x - x0) => y - lg(iD(1)) = m(x - uD(1))
+	% pentru x = 0 => y = y0 - mx0 => y = lg(iD(0)) - m * uD(0)
 	iD = [0.1; 0.2; 0.5; 1; 2; 5; 8];
 	uD_1N4148 = [0.580 0.719 1.078 1.590 2.629 5.575 11.310];
 	uD_1N4007 = [0.584 0.716 1.045 1.555 2.530 5.550 11.300];
@@ -45,10 +46,15 @@ function ref1 = ref1_1()
 
 	gamma
 
+	for i = 1:8
+		I0(i) = log(iD(1)) - (delta_uD(i) / delta_lgiD) * uD(i,1);
+		% y   =    y0	   -              m             *    x0
+	end
+	I0
 
 
 	%________________________________________________
 
 	% Determinarea PSF
-	pause
+	%pause
 end
