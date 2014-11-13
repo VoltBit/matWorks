@@ -1,8 +1,0 @@
-	semilogx(uD_1N4148,iD,'k','LineWidth',2)
-	semilogx(uD_1N4007,iD,'m','LineWidth',2)
-	semilogx(uD_BAT42,iD,'c','LineWidth',2)
-	semilogx(uD_1N5819,iD,'k','LineWidth',2)
-	semilogx(uD_DZ3V3,iD,'c','LineWidth',2)
-	semilogx(uD_LEDR,iD,'r','LineWidth',2)
-	semilogx(uD_LEDG,iD,'g','LineWidth',2)
-	semilogx(uD_LEDB,iD,'b','LineWidth',2)
