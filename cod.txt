@@ -1,4 +1,3 @@
-function ref1 = ref1_1()
 
 	% Trasarea caractristicii la scara semilogaritmica
 	% Formula de calcul:
@@ -69,3 +68,57 @@ function ref1 = ref1_1()
 	I0
 
 end
+
+%_____________Determinarea PSV:
+
+	ux = [0 5];
+	ix = [5 0];
+	
+	figure;
+	xlabel('uD(V)'); ylabel('id(mA)'); title('1N4148');
+
+	[coord_Ud,coord_Id] = ployxpoly(ud1,iD,ux,ix);
+	plot(ud1,iD,ux,ix);
+
+	figure(2)
+	xlabel('uD(V)'); ylabel('id(mA)'); title('1N4007');
+
+	[coord_Ud,coord_Id] = ployxpoly(ud1,iD,ux,ix);
+	plot(ud2,iD,ux,ix);
+
+	figure(3)
+	xlabel('uD(V)'); ylabel('id(mA)'); title('BAT42');
+
+	[coord_Ud,coord_Id] = ployxpoly(ud1,iD,ux,ix);
+	plot(ud3,iD,ux,ix);
+
+	figure(4)
+	xlabel('uD(V)'); ylabel('id(mA)'); title('1N5819');
+
+	[coord_Ud,coord_Id] = ployxpoly(ud1,iD,ux,ix);
+	plot(ud4,iD,ux,ix);
+
+	figure(5)
+	xlabel('uD(V)'); ylabel('id(mA)'); title('DZ3V3');
+
+	[coord_Ud,coord_Id] = ployxpoly(ud1,iD,ux,ix);
+	plot(ud5,iD,ux,ix);
+
+	figure(6)
+	xlabel('uD(V)'); ylabel('id(mA)'); title('LEDR');
+
+	[coord_Ud,coord_Id] = ployxpoly(ud1,iD,ux,ix);
+	plot(ud6,iD,ux,ix);
+
+	figure(7)
+	xlabel('uD(V)'); ylabel('id(mA)'); title('LEDG');
+
+	[coord_Ud,coord_Id] = ployxpoly(ud1,iD,ux,ix);
+	plot(ud7,iD,ux,ix);
+
+	figure(8)
+	xlabel('uD(V)'); ylabel('id(mA)'); title('LEDB');
+
+	[coord_Ud,coord_Id] = ployxpoly(ud1,iD,ux,ix);
+	plot(ud8,iD,ux,ix);
+
