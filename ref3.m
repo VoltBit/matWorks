@@ -46,18 +46,20 @@ function f = ref3()
 	xlabel("Tipul conexiunii",'FontSize',16)
 	ylabel("Valoarea amplificarii",'FontSize',16)
 	
+	text = strcat("Valoarea impedantei (k",'\Omega',")");
+	
 	figure()
 	bar(Zi,'g')
 	set(gca, 'XTick', 1:5, 'XTickLabel', Nume);
 	title("Dimensiunea impedantei de intrare",'FontSize',20)
 	xlabel("Tipul conexiunii",'FontSize',16)
-	ylabel("Valoarea impedantei",'FontSize',16)
+	ylabel(text,'FontSize',16)
 	
 	figure()
 	bar(Zo,'g')
 	set(gca, 'XTick', 1:5, 'XTickLabel', Nume);
 	title("Dimensiunea impedantei de iesire",'FontSize',20)
 	xlabel("Tipul conexiunii",'FontSize',16)
-	ylabel("Valoarea impedantei",'FontSize',16)
+	ylabel(text,'FontSize',16)
 
 end
