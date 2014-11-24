@@ -42,7 +42,7 @@ function f = ref3()
 	figure()
 	bar(Ai,'g')
 	set(gca, 'XTick', 1:5, 'XTickLabel', Nume);
-	title("Dimensiunea amplificari de curent",'FontSize',20)
+	title("Dimensiunea amplificarii de curent",'FontSize',20)
 	xlabel("Tipul conexiunii",'FontSize',16)
 	ylabel("Valoarea amplificarii",'FontSize',16)
 	
