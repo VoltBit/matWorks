@@ -27,6 +27,6 @@ function m = AA_testing()
 	title('n*100 + log(n) vs n + (log(n))^10')
 	legend('n*100 + log(n)','n + (log(n))^10');
 
-
+print("test");
 
 endfunction
